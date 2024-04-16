@@ -13,8 +13,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
-import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import {TestService} from "./services/testService/test.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,6 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
     LoginComponent,
     RegisterComponent,
     MenuComponent,
-    UserDashboardComponent,
     AdminDashboardComponent,
   ],
   imports: [
@@ -35,10 +35,14 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
     MatIconModule,
     MatButtonModule,
     LayoutModule,
+    HttpClientModule // necessary so that httpClient service works
 
 
   ],
-  providers: [],
+  providers: [
+    TestService,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
