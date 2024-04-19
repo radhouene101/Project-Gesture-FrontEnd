@@ -16,6 +16,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import {TestService} from "./services/testService/test.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { ContestComponent } from './pages/contest/contest.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     LoginComponent,
     RegisterComponent,
     MenuComponent,
+    ContestComponent,
     AdminDashboardComponent,
+    ContestComponent,
   ],
   imports: [
     BrowserModule,
