@@ -8,4 +8,5 @@ export { Option } from './models/option';
 export { OptionDto } from './models/option-dto';
 export { ProjectsDto } from './models/projects-dto';
 export { SousCategory } from './models/sous-category';
+export { SousCategoryDto } from './models/sous-category-dto';
 export { UserDto } from './models/user-dto';

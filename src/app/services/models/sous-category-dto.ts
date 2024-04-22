@@ -1,6 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface SousCategory {
+export interface SousCategoryDto {
   description?: string;
   id?: number;
   nom?: string;

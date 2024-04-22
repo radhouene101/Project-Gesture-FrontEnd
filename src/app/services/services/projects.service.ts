@@ -9,26 +9,26 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { addProject } from '../fn/project/add-project';
-import { AddProject$Params } from '../fn/project/add-project';
-import { deleteProject } from '../fn/project/delete-project';
-import { DeleteProject$Params } from '../fn/project/delete-project';
-import { getAllProjects } from '../fn/project/get-all-projects';
-import { GetAllProjects$Params } from '../fn/project/get-all-projects';
-import { getAllWinners } from '../fn/project/get-all-winners';
-import { GetAllWinners$Params } from '../fn/project/get-all-winners';
-import { getAllWinnersByYear } from '../fn/project/get-all-winners-by-year';
-import { GetAllWinnersByYear$Params } from '../fn/project/get-all-winners-by-year';
-import { getGroupsByWinningSteak } from '../fn/project/get-groups-by-winning-steak';
-import { GetGroupsByWinningSteak$Params } from '../fn/project/get-groups-by-winning-steak';
-import { getNominatedProjects } from '../fn/project/get-nominated-projects';
-import { GetNominatedProjects$Params } from '../fn/project/get-nominated-projects';
-import { getProjectById } from '../fn/project/get-project-by-id';
-import { GetProjectById$Params } from '../fn/project/get-project-by-id';
+import { addProject } from '../fn/projects/add-project';
+import { AddProject$Params } from '../fn/projects/add-project';
+import { deleteProject } from '../fn/projects/delete-project';
+import { DeleteProject$Params } from '../fn/projects/delete-project';
+import { getAllProjects } from '../fn/projects/get-all-projects';
+import { GetAllProjects$Params } from '../fn/projects/get-all-projects';
+import { getAllWinners } from '../fn/projects/get-all-winners';
+import { GetAllWinners$Params } from '../fn/projects/get-all-winners';
+import { getAllWinnersByYear } from '../fn/projects/get-all-winners-by-year';
+import { GetAllWinnersByYear$Params } from '../fn/projects/get-all-winners-by-year';
+import { getGroupsByWinningSteak } from '../fn/projects/get-groups-by-winning-steak';
+import { GetGroupsByWinningSteak$Params } from '../fn/projects/get-groups-by-winning-steak';
+import { getNominatedProjects } from '../fn/projects/get-nominated-projects';
+import { GetNominatedProjects$Params } from '../fn/projects/get-nominated-projects';
+import { getProjectById } from '../fn/projects/get-project-by-id';
+import { GetProjectById$Params } from '../fn/projects/get-project-by-id';
 import { ProjectsDto } from '../models/projects-dto';
 
 @Injectable({ providedIn: 'root' })
-export class ProjectService extends BaseService {
+export class ProjectsService extends BaseService {
   constructor(config: ApiConfiguration, http: HttpClient) {
     super(config, http);
   }

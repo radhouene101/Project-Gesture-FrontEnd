@@ -1,5 +1,6 @@
 export { UserService } from './services/user.service';
-export { ProjectService } from './services/project.service';
-export { OptionService } from './services/option.service';
-export { ProjectCategoryService } from './services/project-category.service';
+export { SousCategoryService } from './services/sous-category.service';
+export { ProjectsService } from './services/projects.service';
+export { OptionsService } from './services/options.service';
+export { CategoryService } from './services/category.service';
 export { AuthenticationService } from './services/authentication.service';

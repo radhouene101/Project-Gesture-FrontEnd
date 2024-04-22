@@ -5,9 +5,10 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { UserService } from './services/user.service';
-import { ProjectService } from './services/project.service';
-import { OptionService } from './services/option.service';
-import { ProjectCategoryService } from './services/project-category.service';
+import { SousCategoryService } from './services/sous-category.service';
+import { ProjectsService } from './services/projects.service';
+import { OptionsService } from './services/options.service';
+import { CategoryService } from './services/category.service';
 import { AuthenticationService } from './services/authentication.service';
 
 /**
@@ -19,9 +20,10 @@ import { AuthenticationService } from './services/authentication.service';
   declarations: [],
   providers: [
     UserService,
-    ProjectService,
-    OptionService,
-    ProjectCategoryService,
+    SousCategoryService,
+    ProjectsService,
+    OptionsService,
+    CategoryService,
     AuthenticationService,
     ApiConfiguration
   ],

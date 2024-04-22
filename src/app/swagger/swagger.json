@@ -1,3 +1,4 @@
+
 {
   "openapi": "3.0.1",
   "info": {
@@ -12,7 +13,9 @@
   ],
   "security": [
     {
-      "bearerAuth": []
+      "bearerAuth": [
+
+      ]
     }
   ],
   "paths": {
@@ -67,10 +70,61 @@
         }
       }
     },
+    "/sous-category": {
+      "get": {
+        "tags": [
+          "sous-category"
+        ],
+        "operationId": "getAllOptions",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SousCategoryDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "sous-category"
+        ],
+        "operationId": "addOption",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SousCategoryDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SousCategoryDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/projects": {
       "get": {
         "tags": [
-          "project"
+          "projects"
         ],
         "operationId": "getAllProjects",
         "responses": {
@@ -91,7 +145,7 @@
       },
       "post": {
         "tags": [
-          "project"
+          "projects"
         ],
         "operationId": "addProject",
         "requestBody": {
@@ -121,9 +175,9 @@
     "/options": {
       "get": {
         "tags": [
-          "option"
+          "options"
         ],
-        "operationId": "getAllOptions",
+        "operationId": "getAllOptions_1",
         "responses": {
           "200": {
             "description": "OK",
@@ -142,9 +196,9 @@
       },
       "post": {
         "tags": [
-          "option"
+          "options"
         ],
-        "operationId": "addOption",
+        "operationId": "addOption_1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -172,7 +226,7 @@
     "/category-projects": {
       "get": {
         "tags": [
-          "project-category"
+          "category"
         ],
         "operationId": "getAllCategories",
         "responses": {
@@ -193,7 +247,7 @@
       },
       "post": {
         "tags": [
-          "project-category"
+          "category"
         ],
         "operationId": "addCategory",
         "requestBody": {
@@ -223,7 +277,7 @@
     "/auth/register": {
       "post": {
         "tags": [
-          "authentication"
+          "Authentication"
         ],
         "operationId": "register",
         "requestBody": {
@@ -253,7 +307,7 @@
     "/auth/authenticate": {
       "post": {
         "tags": [
-          "authentication"
+          "Authentication"
         ],
         "operationId": "authenticate",
         "requestBody": {
@@ -397,10 +451,63 @@
         }
       }
     },
+    "/sous-category/{id}": {
+      "get": {
+        "tags": [
+          "sous-category"
+        ],
+        "operationId": "getOptionById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SousCategoryDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "sous-category"
+        ],
+        "operationId": "deleteOptionById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/projects/{id}": {
       "get": {
         "tags": [
-          "project"
+          "projects"
         ],
         "operationId": "getProjectById",
         "parameters": [
@@ -429,7 +536,7 @@
       },
       "delete": {
         "tags": [
-          "project"
+          "projects"
         ],
         "operationId": "deleteProject",
         "parameters": [
@@ -453,7 +560,7 @@
     "/projects/scolar-year": {
       "get": {
         "tags": [
-          "project"
+          "projects"
         ],
         "operationId": "getAllWinners",
         "parameters": [
@@ -486,7 +593,7 @@
     "/projects/scolar-year/{scolarYear}": {
       "get": {
         "tags": [
-          "project"
+          "projects"
         ],
         "operationId": "getAllWinnersByYear",
         "parameters": [
@@ -519,7 +626,7 @@
     "/projects/nominated": {
       "get": {
         "tags": [
-          "project"
+          "projects"
         ],
         "operationId": "getNominatedProjects",
         "responses": {
@@ -542,7 +649,7 @@
     "/projects/hall-of-fame-groups/{streakValue}": {
       "get": {
         "tags": [
-          "project"
+          "projects"
         ],
         "operationId": "getGroupsByWinningSteak",
         "parameters": [
@@ -576,9 +683,9 @@
     "/options/{id}": {
       "get": {
         "tags": [
-          "option"
+          "options"
         ],
-        "operationId": "getOptionById",
+        "operationId": "getOptionById_1",
         "parameters": [
           {
             "name": "id",
@@ -605,9 +712,9 @@
       },
       "delete": {
         "tags": [
-          "option"
+          "options"
         ],
-        "operationId": "deleteOptionById",
+        "operationId": "deleteOptionById_1",
         "parameters": [
           {
             "name": "id",
@@ -629,7 +736,7 @@
     "/category-projects/{id}": {
       "get": {
         "tags": [
-          "project-category"
+          "category"
         ],
         "operationId": "getCategoryById",
         "parameters": [
@@ -658,7 +765,7 @@
       },
       "delete": {
         "tags": [
-          "project-category"
+          "category"
         ],
         "operationId": "deleteCategory",
         "parameters": [
@@ -703,6 +810,21 @@
             "type": "string"
           },
           "fullname": {
+            "type": "string"
+          }
+        }
+      },
+      "SousCategoryDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           }
         }
@@ -817,9 +939,6 @@
           },
           "description": {
             "type": "string"
-          },
-          "categoriesProjects": {
-            "$ref": "#/components/schemas/CategoryProjects"
           }
         }
       },
@@ -854,6 +973,12 @@
           },
           "description": {
             "type": "string"
+          },
+          "sousCategory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SousCategory"
+            }
           }
         }
       },

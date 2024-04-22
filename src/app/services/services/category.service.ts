@@ -9,18 +9,18 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { addCategory } from '../fn/project-category/add-category';
-import { AddCategory$Params } from '../fn/project-category/add-category';
+import { addCategory } from '../fn/category/add-category';
+import { AddCategory$Params } from '../fn/category/add-category';
 import { CategoryProjectsDto } from '../models/category-projects-dto';
-import { deleteCategory } from '../fn/project-category/delete-category';
-import { DeleteCategory$Params } from '../fn/project-category/delete-category';
-import { getAllCategories } from '../fn/project-category/get-all-categories';
-import { GetAllCategories$Params } from '../fn/project-category/get-all-categories';
-import { getCategoryById } from '../fn/project-category/get-category-by-id';
-import { GetCategoryById$Params } from '../fn/project-category/get-category-by-id';
+import { deleteCategory } from '../fn/category/delete-category';
+import { DeleteCategory$Params } from '../fn/category/delete-category';
+import { getAllCategories } from '../fn/category/get-all-categories';
+import { GetAllCategories$Params } from '../fn/category/get-all-categories';
+import { getCategoryById } from '../fn/category/get-category-by-id';
+import { GetCategoryById$Params } from '../fn/category/get-category-by-id';
 
 @Injectable({ providedIn: 'root' })
-export class ProjectCategoryService extends BaseService {
+export class CategoryService extends BaseService {
   constructor(config: ApiConfiguration, http: HttpClient) {
     super(config, http);
   }
