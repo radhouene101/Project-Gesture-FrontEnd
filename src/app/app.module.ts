@@ -15,8 +15,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import {TestService} from "./services/testService/test.service";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import { ContestComponent } from './pages/contest/contest.component';
+import {HttpInterceptorService} from "./services/http-interceptor/http-interceptor.service";
+import {ProjectsService} from "./services/services/projects.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,22 +31,28 @@ import { ContestComponent } from './pages/contest/contest.component';
     AdminDashboardComponent,
     ContestComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    LayoutModule,
-    HttpClientModule // necessary so that httpClient service works
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatGridListModule,
+        MatCardModule,
+        MatMenuModule,
+        MatIconModule,
+        MatButtonModule,
+        LayoutModule,
+        HttpClientModule,
+        FormsModule,
+        // necessary so that httpClient service works
 
 
-  ],
+    ],
   providers: [
-    TestService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi:true
+    },
     HttpClient
   ],
   bootstrap: [AppComponent]

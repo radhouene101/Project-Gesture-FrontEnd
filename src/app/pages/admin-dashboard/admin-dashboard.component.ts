@@ -3,7 +3,8 @@ import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import {TestService} from "../../services/testService/test.service";
 import {UserService} from "../../services/services/user.service";
-import {ProjectService} from "../../services/services/project.service";
+import {ProjectsService} from "../../services/services/projects.service";
+import {ProjectsDto} from "../../services/models/projects-dto";
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -25,7 +26,7 @@ export class AdminDashboardComponent implements OnInit{
 
       return [
         { title: 'Projects requests', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
+        { title: 'test 2', cols: 1, rows: 1 },
         { title: 'Card 3', cols: 1, rows: 2 },
         { title: 'Card 4', cols: 1, rows: 1 }
       ];
@@ -34,32 +35,24 @@ export class AdminDashboardComponent implements OnInit{
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private testService : TestService,
     private user : UserService,
-    private projetService : ProjectService
+    private projetService : ProjectsService
 
   ) {}
 
+  projects:Array<ProjectsDto> = [];
   ngOnInit(): void {
-    console.log(this.projetService.getAllProjects$Response().subscribe(
-      {
-        next: (data) => {
-          console.log('project list is ',data);
-        }
-      }
-    ))
-  this.testService.finAllUsers()
-    .subscribe(
-      {
-        next: (data) => {
-          console.log('Transactions list is ',data);
-        }
-      }
-  )
-    this.user.findAll()
+    this.projetService.getAllProjects()
       .subscribe({
         next :(data)=>{
+          this.projects=data;
           console.log(data)
+        }
+      })
+    const test = this.user.findAll()
+      .subscribe({
+        next :(data)=>{
+          console.log(data.toString())
         }
         })
   }
