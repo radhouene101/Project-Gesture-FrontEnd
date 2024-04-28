@@ -8,6 +8,7 @@ import { UserService } from './services/user.service';
 import { SousCategoryService } from './services/sous-category.service';
 import { ProjectsService } from './services/projects.service';
 import { OptionsService } from './services/options.service';
+import { ContestBalDeProjetService } from './services/contest-bal-de-projet.service';
 import { CategoryService } from './services/category.service';
 import { AuthenticationService } from './services/authentication.service';
 
@@ -23,6 +24,7 @@ import { AuthenticationService } from './services/authentication.service';
     SousCategoryService,
     ProjectsService,
     OptionsService,
+    ContestBalDeProjetService,
     CategoryService,
     AuthenticationService,
     ApiConfiguration

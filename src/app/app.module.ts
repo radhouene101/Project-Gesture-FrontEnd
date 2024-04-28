@@ -20,6 +20,8 @@ import { ContestComponent } from './pages/contest/contest.component';
 import {HttpInterceptorService} from "./services/http-interceptor/http-interceptor.service";
 import {ProjectsService} from "./services/services/projects.service";
 import {FormsModule} from "@angular/forms";
+import {FooterComponent} from "./components/footer/footer/footer.component";
+import { AddContestComponent } from './components/contestForm/add-contest/add-contest.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {FormsModule} from "@angular/forms";
     ContestComponent,
     AdminDashboardComponent,
     ContestComponent,
+    FooterComponent,
+    AddContestComponent,
   ],
     imports: [
         BrowserModule,
